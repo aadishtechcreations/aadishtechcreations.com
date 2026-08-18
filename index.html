@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aadish Tech Creations</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: #050b1f;
+      color: white;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 11, 31, 0.97);
+      border-bottom: 1px solid #263b70;
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span {
+      color: #4d8dff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #4d8dff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 90vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          180deg,
+          #071333,
+          #050b1f
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      max-width: 950px;
+    }
+
+    .tagline {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 85px);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #4d8dff;
+    }
+
+    .hero p {
+      color: #c8d5f5;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+
+    /* WAVES */
+
+    .wave {
+      position: absolute;
+      width: 150%;
+      height: 250px;
+      left: -25%;
+      border-radius: 50%;
+      border: 2px solid rgba(55, 125, 255, 0.55);
+      opacity: 0.7;
+      transform: rotate(-4deg);
+    }
+
+    .wave1 {
+      bottom: -120px;
+      animation: waveMove 8s ease-in-out infinite;
+    }
+
+    .wave2 {
+      bottom: -145px;
+      border-color: rgba(80, 145, 255, 0.35);
+      animation: waveMove 10s ease-in-out infinite reverse;
+    }
+
+    .wave3 {
+      bottom: -175px;
+      border-color: rgba(100, 165, 255, 0.25);
+      animation: waveMove 12s ease-in-out infinite;
+    }
+
+    @keyframes waveMove {
+      0%, 100% {
+        transform: translateX(-20px) rotate(-4deg);
+      }
+
+      50% {
+        transform: translateX(30px) rotate(-1deg);
+      }
+    }
+
+    /* BUTTONS */
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 8px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .primary {
+      background: #3478ed;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #245fc4;
+      transform: translateY(-3px);
+    }
+
+    .secondary {
+      border: 2px solid #4d8dff;
+      color: #70a5ff;
+    }
+
+    .secondary:hover {
+      background: #4d8dff;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 80px 7%;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .section-description {
+      text-align: center;
+      color: #aebddd;
+      max-width: 750px;
+      margin: 0 auto 40px;
+      font-size: 19px;
+    }
+
+    /* ABOUT */
+
+    .about-box {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px;
+      background: #0b1634;
+      border: 1px solid #263b70;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .about-box p {
+      color: #d1dcf4;
+      font-size: 19px;
+    }
+
+    /* OWNER */
+
+    .owner-container {
+      max-width: 950px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 45px;
+      background: #0b1634;
+      border: 1px solid #31569e;
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .owner-photo {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #4d8dff;
+      box-shadow: 0 0 30px rgba(55, 125, 255, 0.25);
+    }
+
+    .owner-info {
+      max-width: 500px;
+    }
+
+    .owner-info h3 {
+      color: #4d8dff;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .owner-info p {
+      color: #cbd7ef;
+      font-size: 19px;
+      margin-bottom: 15px;
+    }
+
+    /* SERVICES */
+
+    .services {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #0b1634;
+      border: 1px solid #263b70;
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #4d8dff;
+      box-shadow: 0 10px 30px rgba(55, 125, 255, 0.15);
+    }
+
+    .card-icon {
+      font-size: 45px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: #4d8dff;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #b9c7e2;
+    }
+
+    /* WHY US */
+
+    .why-us {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .why-card {
+      background: #0b1634;
+      border: 1px solid #263b70;
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .why-card h3 {
+      color: #4d8dff;
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      color: #b9c7e2;
+    }
+
+    /* STEPS */
+
+    .steps {
+      max-width: 950px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      text-align: center;
+      background: #0b1634;
+      border: 1px solid #263b70;
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .number {
+      width: 50px;
+      height: 50px;
+      margin: auto auto 15px;
+      border-radius: 50%;
+      background: #3478ed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .step h3 {
+      color: #4d8dff;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #b9c7e2;
+    }
+
+    /* PRICING */
+
+    .pricing-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 35px;
+      text-align: center;
+      background: #0b1634;
+      border: 1px solid #263b70;
+      border-radius: 18px;
+    }
+
+    .pricing-box h3 {
+      color: #4d8dff;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .pricing-box p {
+      color: #cbd7ef;
+      font-size: 19px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      background: #0b1634;
+      border: 1px solid #263b70;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 19px;
+    }
+
+    details p {
+      margin-top: 12px;
+      color: #b9c7e2;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #071333;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .contact-box > p {
+      color: #cbd7ef;
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .contact-info {
+      background: #0b1634;
+      border: 1px solid #263b70;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      font-size: 19px;
+      margin: 10px;
+    }
+
+    .contact-info a {
+      color: #4d8dff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #030713;
+      color: #8998b8;
+      border-top: 1px solid #263b70;
+    }
+
+    footer strong {
+      color: #4d8dff;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 5px;
+      }
+
+      .services,
+      .why-us,
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .owner-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .services,
+      .why-us,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .owner-photo {
+        width: 230px;
+        height: 230px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <div class="logo">
+      Aadish <span>Tech Creations</span>
+    </div>
+
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#owner">Owner</a>
+      <a href="#process">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+  </nav>
+
+
+  <!-- HOME -->
+
+  <section class="hero" id="home">
+
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+
+    <div class="hero-content">
+
+      <div class="tagline">
+        Turning Ideas Into Digital Experiences
+      </div>
+
+      <h1>
+        Aadish <span>Tech Creations</span>
+      </h1>
+
+      <p>
+        Want a game, website, or app?
+        <br>
+        We can help turn your idea into a real digital project.
+      </p>
+
+      <a href="#services" class="button primary">
+        Explore Our Services
+      </a>
+
+      <a href="#contact" class="button secondary">
+        Start Your Project
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About Us
+    </h2>
+
+    <p class="section-description">
+      Technology made creative, simple, and fun.
+    </p>
+
+    <div class="about-box">
+
+      <p>
+        <strong>Aadish Tech Creations</strong>
+        is a technology business focused on creating
+        games, websites, and apps.
+      </p>
+
+      <br>
+
+      <p>
+        Have an idea for something you want to build?
+        We can work toward turning that idea into
+        a working digital project.
+      </p>
+
+      <br>
+
+      <p>
+        Every project is different, and we work based
+        on what the project needs.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OWNER -->
+
+  <section id="owner">
+
+    <h2 class="section-title">
+      Meet the Owner
+    </h2>
+
+    <p class="section-description">
+      The person behind Aadish Tech Creations.
+    </p>
+
+    <div class="owner-container">
+
+      <!-- YOUR PHOTO -->
+
+      <img
+        src="aadish.jpg"
+        alt="Aadish Mahida"
+        class="owner-photo"
+      >
+
+      <div class="owner-info">
+
+        <h3>
+          Aadish Mahida — Owner
+        </h3>
+
+        <p>
+          Aadish is a second grader who loves creating
+          games, websites, and apps.
+        </p>
+
+        <p>
+          He enjoys coming up with new ideas, building
+          digital projects, and turning ideas into
+          something people can use and enjoy.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <h2 class="section-title">
+      Our Services
+    </h2>
+
+    <p class="section-description">
+      Tell us what you want to create.
+    </p>
+
+    <div class="services">
+
+      <div class="card">
+
+        <div class="card-icon">🎮</div>
+
+        <h3>
+          Game Development
+        </h3>
+
+        <p>
+          We can create games based on your
+          ideas and the type of experience you want.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">🌐</div>
+
+        <h3>
+          Website Development
+        </h3>
+
+        <p>
+          We can create websites for businesses,
+          projects, organizations, or personal ideas.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">📱</div>
+
+        <h3>
+          App Development
+        </h3>
+
+        <p>
+          Have an app idea?
+          We can help turn your idea into a custom app.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">💡</div>
+
+        <h3>
+          Custom Projects
+        </h3>
+
+        <p>
+          Have another technology idea?
+          Tell us what you want to build.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY CHOOSE US -->
+
+  <section>
+
+    <h2 class="section-title">
+      Why Choose Us?
+    </h2>
+
+    <p class="section-description">
+      We care about making your idea come to life.
+    </p>
+
+    <div class="why-us">
+
+      <div class="why-card">
+        <h3>Creative Ideas</h3>
+        <p>
+          We enjoy thinking of new and creative
+          ways to build digital projects.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Custom Projects</h3>
+        <p>
+          Your project can be built around
+          your own idea and needs.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Simple Process</h3>
+        <p>
+          We make getting started easy:
+          share your idea and start planning.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Lots of Possibilities</h3>
+        <p>
+          Games, websites, apps, and other
+          creative technology projects are possible.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+
+  <section id="process">
+
+    <h2 class="section-title">
+      How It Works
+    </h2>
+
+    <p class="section-description">
+      Getting started is simple.
+    </p>
+
+    <div class="steps">
+
+      <div class="step">
+
+        <div class="number">1</div>
+
+        <h3>
+          Tell Us Your Idea
+        </h3>
+
+        <p>
+          Tell us if you want a game,
+          website, app, or another project.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">2</div>
+
+        <h3>
+          Discuss the Project
+        </h3>
+
+        <p>
+          We figure out what you want
+          the project to do.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">3</div>
+
+        <h3>
+          Build It
+        </h3>
+
+        <p>
+          We work on turning your idea
+          into a digital project.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">4</div>
+
+        <h3>
+          Launch
+        </h3>
+
+        <p>
+          Once the project is ready,
+          it can be launched and used.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICING -->
+
+  <section>
+
+    <h2 class="section-title">
+      Project Pricing
+    </h2>
+
+    <p class="section-description">
+      Every project is different.
+    </p>
+
+    <div class="pricing-box">
+
+      <h3>
+        Pricing Depends on the Project
+      </h3>
+
+      <p>
+        The price can depend on what you want
+        to create, how large the project is,
+        and what features it needs.
+      </p>
+
+      <br>
+
+      <p>
+        Contact us to discuss your idea and
+        figure out what your project needs.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section id="faq">
+
+    <h2 class="section-title">
+      Frequently Asked Questions
+    </h2>
+
+    <p class="section-description">
+      Some common questions.
+    </p>
+
+    <div class="faq">
+
+      <details>
+        <summary>
+          Can you make a game for me?
+        </summary>
+
+        <p>
+          Yes! Tell us your game idea and
+          we can discuss what you want to create.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Can you make a website?
+        </summary>
+
+        <p>
+          Yes. We can create websites for
+          businesses, projects, and other ideas.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Can you make an app?
+        </summary>
+
+        <p>
+          Yes! If you have an app idea,
+          tell us what you want the app to do.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          How much does a project cost?
+        </summary>
+
+        <p>
+          Pricing depends on the project
+          and the features it needs.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          How do I get started?
+        </summary>
+
+        <p>
+          Contact us by email or text and
+          tell us what you would like to create.
+        </p>
+      </details>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <div class="contact-box">
+
+      <h2 class="section-title">
+        Let's Build Something
+      </h2>
+
+      <p>
+        Ready to turn your idea into a
+        game, website, or app?
+        Contact Aadish Tech Creations.
+      </p>
+
+      <div class="contact-info">
+
+        <p>
+          📧 Email:
+          <a href="mailto:aadish.mahida@gmail.com">
+            aadish.mahida@gmail.com
+          </a>
+        </p>
+
+        <p>
+          📱 Text:
+          <a href="sms:2017465505">
+            (201) 746-5505
+          </a>
+        </p>
+
+      </div>
+
+      <a
+        href="mailto:aadish.mahida@gmail.com"
+        class="button primary">
+        Email Us
+      </a>
+
+      <a
+        href="sms:2017465505"
+        class="button secondary">
+        Text Us
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026
+      <strong>Aadish Tech Creations</strong>.
+      All rights reserved.
+    </p>
+
+    <p>
+      Games • Websites • Apps
+    </p>
+
+  </footer>
+
+</body>
+</html>
